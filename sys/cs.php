@@ -1,6 +1,7 @@
 <?php
 
-defined('SYSPATH')? : exit('Acceso restringido');
+if(defined('SYSPATH')) exit('Acceso restringido');
+
 
 require_once SYSPATH . 'core' . SEP . 'error' . EXT;
 require_once SYSPATH . 'core' . SEP . 'load' . EXT;
@@ -29,7 +30,9 @@ class CS {
 
 			//pone la direcciona base de los ccontroladores
 			$path = APPPATH . 'class' . SEP . $this->conf->controller_path;
-			$this->conf->controller_path === ''? : $path .= SEP;
+
+			if ($this->conf->controller_path == '')
+				$path.=SEP;
 
 			//recorre todos los segmentos de la url
 			foreach (explode('/', $_SERVER['PATH_INFO']) as $segment) {
