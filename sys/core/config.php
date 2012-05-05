@@ -1,6 +1,6 @@
 <?php
 
-class CONFIG {
+class Config {
 
 	private static $_loaded_config = array();
 
