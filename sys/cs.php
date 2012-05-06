@@ -3,7 +3,6 @@
 if (!defined('SYSPATH'))
 	exit('Acceso restringido');
 
-
 require SYSPATH . 'core' . SEP . 'cs_base' . EXT;
 require SYSPATH . 'core' . SEP . 'library' . EXT;
 require SYSPATH . 'core' . SEP . 'config' . EXT;
