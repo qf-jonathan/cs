@@ -4,14 +4,15 @@ if (!defined('SYSPATH'))
 	exit('Acceso restringido');
 
 
-require SYSPATH . 'core' . SEP . 'error' . EXT;
-require SYSPATH . 'core' . SEP . 'config' . EXT;
-require SYSPATH . 'core' . SEP . 'db' . EXT;
-require SYSPATH . 'core' . SEP . 'helper' . EXT;
-require SYSPATH . 'core' . SEP . 'in' . EXT;
+require SYSPATH . 'core' . SEP . 'cs_base' . EXT;
 require SYSPATH . 'core' . SEP . 'library' . EXT;
-require SYSPATH . 'core' . SEP . 'out' . EXT;
+require SYSPATH . 'core' . SEP . 'config' . EXT;
+require SYSPATH . 'core' . SEP . 'helper' . EXT;
+require SYSPATH . 'core' . SEP . 'error' . EXT;
 require SYSPATH . 'core' . SEP . 'view' . EXT;
+require SYSPATH . 'core' . SEP . 'out' . EXT;
+require SYSPATH . 'core' . SEP . 'db' . EXT;
+require SYSPATH . 'core' . SEP . 'in' . EXT;
 
 class CS {
 
