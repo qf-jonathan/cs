@@ -1,10 +1,11 @@
 <?php
 
-if(defined('SYSPATH')) exit('Acceso restringido');
+if (!defined('SYSPATH'))
+	exit('Acceso restringido');
 
 
 require_once SYSPATH . 'core' . SEP . 'error' . EXT;
-require_once SYSPATH . 'core' . SEP . 'load' . EXT;
+require_once SYSPATH . 'core' . SEP . 'config' . EXT;
 
 class CS {
 
@@ -16,7 +17,7 @@ class CS {
 
 	public function __construct() {
 		//carga la configuracion de sistema
-		$this->conf = Load::config('config');
+		$this->conf = Config::load('config')->get_all();
 
 		//verifica si esta definida una url de controlador y accion
 		if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
