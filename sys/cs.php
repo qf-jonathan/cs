@@ -27,26 +27,23 @@ class CS {
 
 		//verifica si esta definida una url de controlador y accion
 		if (isset($_SERVER['PATH_INFO']) && $_SERVER['PATH_INFO'] !== '/') {
-
-			if ($_SERVER['PATH_INFO'][0] !== '/')
-				$_SERVER['PATH_INFO'] = '/' . $_SERVER['PATH_INFO'];
-
+			
 			//verifica si la url es valida
-			if (!preg_match('/^(\/[a-z_0-9]+)+\/*$/', $_SERVER['PATH_INFO']))
-				Error::set_404();
+			if(!preg_match('#^(/[a-z\-_0-9]+)+/?$#i',$_SERVER['PATH_INFO']))
+				Error::set_404 ();
 
-			//pone la direcciona base de los ccontroladores
+			//pone la direccion base de los controladores
 			$path = APPPATH . 'class' . SEP . $this->conf->controller_path;
 
-			if ($this->conf->controller_path == '')
+			if ($this->conf->controller_path != '')
 				$path.=SEP;
-
+			
 			//recorre todos los segmentos de la url
 			foreach (explode('/', $_SERVER['PATH_INFO']) as $segment) {
 
 				//si el segmento no esta vacio
 				if ($segment !== '') {
-
+					
 					//si no esta definido una direccion de controlador
 					if ($this->controller_path === '') {
 						$path.=$segment;
